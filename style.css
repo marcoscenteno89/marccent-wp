@@ -1,0 +1,13 @@
+/*
+Theme Name: Marccent WP
+Author: Marcos Centeno
+Description: A block theme on the Marccent design system (marccent-theme): the same look, theme engine and components as the Marccent Next.js site. Needs the Marccent Blocks plugin, which brings the styles, the runtime and the blocks; this theme is the page frame (templates, header and footer).
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 8.0
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: marccent-wp
+Requires Plugins: marccent-blocks
+*/
