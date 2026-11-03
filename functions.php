@@ -10,6 +10,11 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'menus' );
 } );
 
+// The patterns (patterns/*.php, written by tools/patterns.js) under their own heading in the inserter.
+add_action( 'init', function () {
+	register_block_pattern_category( 'marccent', array( 'label' => __( 'Marccent', 'marccent-wp' ), 'description' => __( 'The sections a Marccent site starts from.', 'marccent-wp' ) ) );
+} );
+
 // Without the plugin the templates' blocks can't render: say so to whoever can fix it.
 add_action( 'admin_notices', function () {
 	if ( ! function_exists( 'marccent_blocks_defaults' ) && current_user_can( 'activate_plugins' ) ) {
