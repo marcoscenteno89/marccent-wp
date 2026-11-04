@@ -20,7 +20,19 @@
 			"gradients": [ { "slug": "brand", "name": "Brand", "gradient": "var(--gradient)" } ]
 		},
 		"typography": { "defaultFontSizes": false, "fontSizes": [], "fluid": false },
-		"spacing": { "defaultSpacingSizes": false, "spacingSizes": [] }
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{ "slug": "xs", "name": "Extra small", "size": "var(--space-xs)" },
+				{ "slug": "sm", "name": "Small", "size": "var(--space-sm)" },
+				{ "slug": "base", "name": "Normal", "size": "var(--space)" },
+				{ "slug": "md", "name": "Medium", "size": "var(--space-md)" },
+				{ "slug": "lg", "name": "Large", "size": "var(--space-lg)" },
+				{ "slug": "xl", "name": "Extra large", "size": "var(--space-xl)" },
+				{ "slug": "2xl", "name": "Double", "size": "var(--space-2xl)" },
+				{ "slug": "section", "name": "Section", "size": "var(--section-space)" }
+			]
+		}
 	},
 	"styles": {
 		"spacing": { "blockGap": "0px", "padding": { "top": "0", "right": "0", "bottom": "0", "left": "0" } }
