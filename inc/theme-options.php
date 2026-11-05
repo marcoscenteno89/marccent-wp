@@ -98,6 +98,19 @@ add_action( 'init', function () {
 add_action( 'admin_menu', function () {
 	$hook = add_theme_page( __( 'Marccent theme', 'marccent-wp' ), __( 'Marccent theme', 'marccent-wp' ), 'manage_options', 'marccent-theme', function () {
 		echo '<div class="wrap"><h1>' . esc_html__( 'Marccent theme', 'marccent-wp' ) . '</h1>';
+		// Two tabs: the site's look (this file), and its tracking codes and cookie banner (inc/tracking.php).
+		$tab = 'tracking' === ( $_GET['tab'] ?? '' ) ? 'tracking' : 'look'; // phpcs:ignore WordPress.Security.NonceVerification -- only read to pick a tab
+		echo '<nav class="nav-tab-wrapper">';
+		foreach ( array( 'look' => __( 'Look', 'marccent-wp' ), 'tracking' => __( 'Tracking and cookies', 'marccent-wp' ) ) as $id => $label ) {
+			printf( '<a href="%s" class="nav-tab%s">%s</a>', esc_url( add_query_arg( 'tab', $id, admin_url( 'themes.php?page=marccent-theme' ) ) ), $tab === $id ? ' nav-tab-active' : '', esc_html( $label ) );
+		}
+		echo '</nav>';
+		if ( 'tracking' === $tab ) {
+			settings_errors();
+			marccent_wp_tracking_page();
+			echo '</div>';
+			return;
+		}
 		if ( ! function_exists( 'marccent_blocks_theme_options' ) ) {
 			echo '<p>' . esc_html__( 'The theme’s choices come from the Marccent Blocks plugin: activate it under Plugins.', 'marccent-wp' ) . '</p></div>';
 			return;
@@ -107,7 +120,7 @@ add_action( 'admin_menu', function () {
 	} );
 
 	add_action( "admin_enqueue_scripts", function ( $current ) use ( $hook ) {
-		if ( $current !== $hook || ! function_exists( 'marccent_blocks_theme_options' ) ) {
+		if ( $current !== $hook || ! function_exists( 'marccent_blocks_theme_options' ) || 'tracking' === ( $_GET['tab'] ?? '' ) ) { // phpcs:ignore WordPress.Security.NonceVerification -- only read to pick a tab
 			return;
 		}
 		$file = get_template_directory() . '/assets/theme-options.js';

@@ -12,6 +12,7 @@ add_action( 'after_setup_theme', function () {
 } );
 
 require __DIR__ . '/inc/theme-options.php';
+require __DIR__ . '/inc/tracking.php'; // tracking codes and cookie consent (Appearance → Marccent theme → Tracking and cookies)
 require __DIR__ . '/inc/performance.php'; // what WordPress adds to every page that a Marccent site doesn't use // the site's theme (design, colors, mode, glass, hover…) edited in the Site Editor
 
 // The patterns (patterns/*.php, written by tools/patterns.js) under their own heading in the inserter.
