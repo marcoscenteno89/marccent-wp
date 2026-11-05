@@ -64,3 +64,19 @@ add_filter( 'marccent_export_parts', function ( $parts ) {
 	);
 	return $parts;
 } );
+
+/*
+ * Appearance → Editor (the site editor) is off: the site's frame is this theme's templates and parts, with Marccent's
+ * blocks, and the site editor can't edit them. Its menu item and the toolbar's Edit Site go, and the screen sends
+ * anyone who opens it to Themes; its patterns screens (?p=/pattern…) stay reachable.
+ */
+add_action( 'admin_menu', function () {
+	remove_submenu_page( 'themes.php', 'site-editor.php' );
+}, 99 );
+add_action( 'admin_bar_menu', fn( $bar ) => $bar->remove_node( 'site-editor' ), 99 );
+add_action( 'load-site-editor.php', function () {
+	if ( ! str_starts_with( (string) ( $_GET['p'] ?? '' ), '/pattern' ) ) { // phpcs:ignore WordPress.Security.NonceVerification -- only read to route
+		wp_safe_redirect( admin_url( 'themes.php' ) );
+		exit;
+	}
+} );
