@@ -4,12 +4,12 @@
  * Slug: marccent-wp/contact
  * Categories: marccent, contact
  * Keywords: contact, form, hours
- * Description: A quote form beside the business’s hours (Settings → Business) and whether it’s open now.
+ * Description: A quote form beside the business’s hours (Site content → Business) and whether it’s open now.
  *
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"anchor":"form"} -->
+<!-- wp:marccent/section {"padY":"pad-y-lg","anchor":"form"} -->
 <!-- wp:marccent/grid {"cols":2,"gap":"gap-lg","alignItems":"items-start"} -->
 <!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
 <!-- wp:heading -->
@@ -34,13 +34,11 @@
 <h3 class="wp-block-heading">Hours</h3>
 <!-- /wp:heading -->
 
-<!-- wp:shortcode -->
-[open_now]
-<!-- /wp:shortcode -->
+<!-- wp:paragraph -->
+<p><strong>{{ business.hours:open_now }}</strong></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:shortcode -->
-[business_hours]
-<!-- /wp:shortcode -->
+<!-- wp:marccent/field {"key":"business.hours"} /-->
 <!-- /wp:marccent/grid -->
 <!-- /wp:marccent/grid -->
 <!-- /wp:marccent/section -->

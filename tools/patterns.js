@@ -20,7 +20,6 @@ const button = ( label, href, ic = 'arrow-right', color = 'primary' ) => B( 'mar
 const buttons = ( ...b ) => grid( { layout: 'row-wrap', gap: 'gap-sm' }, b );
 const loop = ( attrs, item ) => B( 'marccent/loop', attrs, item );
 const field = ( key, attrs = {} ) => B( 'marccent/field', { key, ...attrs } );
-const shortcode = ( text ) => B( 'core/shortcode', { text } );
 
 // [ slug, title, categories, description, keywords, blocks ]
 const PATTERNS = [
@@ -82,7 +81,7 @@ const PATTERNS = [
 			] ),
 		] ),
 	] ],
-	[ 'contact', 'Contact: a form, the hours and the phone', [ 'marccent', 'contact' ], 'A quote form beside the business’s hours (Settings → Business) and whether it’s open now.', [ 'contact', 'form', 'hours' ], [
+	[ 'contact', 'Contact: a form, the hours and the phone', [ 'marccent', 'contact' ], 'A quote form beside the business’s hours (Site content → Business) and whether it’s open now.', [ 'contact', 'form', 'hours' ], [
 		section( { anchor: 'form' }, [
 			grid( { cols: 2, gap: 'gap-lg', alignItems: 'items-start' }, [
 				stack( [
@@ -97,14 +96,24 @@ const PATTERNS = [
 				] ),
 				stack( [
 					h( 3, 'Hours' ),
-					shortcode( '[open_now]' ),
-					shortcode( '[business_hours]' ),
+					// The Business group's Opening hours (Site content): open now, then the week.
+					p( '<strong>{{ business.hours:open_now }}</strong>' ),
+					field( 'business.hours' ),
 				] ),
 			] ),
 		] ),
 	] ],
-	[ 'locations', 'Locations', [ 'marccent', 'contact' ], 'The business’s offices or shops (Settings → Business → Locations), each with its address, phone, hours and directions.', [ 'locations', 'offices', 'map' ], [
-		section( {}, [ h( 2, 'Where to find us' ), shortcode( '[business_locations]' ) ] ),
+	[ 'locations', 'Locations', [ 'marccent', 'contact' ], 'The business’s offices or shops (Site content → Locations), each with its address, phone, hours and directions.', [ 'locations', 'offices', 'map' ], [
+		// The Locations rows (Site content): each one's name, address, phone, hours and directions.
+		section( {}, [ h( 2, 'Where to find us' ), loop( { source: 'locations', from: 'options', perPage: 20, cols: 2 }, [
+			card( [
+				h( 3, '{{name}}' ),
+				p( '{{street}}, {{city}}, {{state}} {{postal_code}}' ),
+				p( '<a href="tel:{{telephone}}">{{phone}}</a>' ),
+				field( 'hours' ),
+				buttons( button( 'Directions', '{{map_link}}', 'diamond-turn-right', 'secondary' ) ),
+			] ),
+		] ) ] ),
 	] ],
 ];
 
