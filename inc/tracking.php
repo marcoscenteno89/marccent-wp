@@ -12,7 +12,6 @@
  * Consent Mode (Meta's pixel, heatmaps, chat widgets) can wait: with "Hold the tracking codes", the codes are printed
  * inert (<template>) and only run once the visitor accepts. A link to #cookie-settings anywhere reopens the banner.
  *
- * Both were Marccent Local's (mcl_tracking, mcl_consent): moved here once, below, so a site without it has them too.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -27,19 +26,11 @@ const MARCCENT_WP_TRACKING_HOOKS = array(
 	'body_close' => array( 'wp_footer', 99 ),
 );
 
-// Once: Marccent Local's saved codes and banner, moved here (and gone from there). Both options then exist (autoloaded),
-// so a site that never saved them doesn't look for them with a query on every page.
+// Both options exist (autoloaded), so a site that never saved them doesn't look for them with a query on every page.
 add_action( 'init', function () {
-	if ( false !== get_option( MARCCENT_WP_TRACKING, false ) && false !== get_option( MARCCENT_WP_CONSENT, false ) ) {
-		return; // done: both autoloaded, so no query
-	}
-	foreach ( array( 'mcl_tracking' => MARCCENT_WP_TRACKING, 'mcl_consent' => MARCCENT_WP_CONSENT ) as $old => $new ) {
-		$saved = get_option( $old, null );
-		if ( false === get_option( $new, false ) ) {
-			add_option( $new, null !== $saved ? $saved : array() );
-		}
-		if ( null !== $saved ) {
-			delete_option( $old );
+	foreach ( array( MARCCENT_WP_TRACKING, MARCCENT_WP_CONSENT ) as $option ) {
+		if ( false === get_option( $option, false ) ) {
+			add_option( $option, array() );
 		}
 	}
 } );
