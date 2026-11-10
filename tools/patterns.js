@@ -41,7 +41,7 @@ const PATTERNS = [
 	] ],
 	// The header floating over the hero (PATTERNS.md, Floating header): a pill, see-through until the page scrolls.
 	[ 'header-floating', 'Header: floating over the hero', [ 'header', 'marccent' ], 'The header as a pill floating over the top of the page: see-through while the page is at its top, solid once it scrolls; the first section (a hero) starts under it. The same parts as the Header.', [ 'header', 'menu', 'navigation', 'floating' ], [
-		section( { as: 'header', verticalPadding: 'pad-y-sm', width: 'wrap wrap-fluid', className: 'fixed-top pe-none' }, [
+		section( { as: 'header', verticalPadding: 'pad-y-sm', className: 'fixed-top pe-none' }, [
 			grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center', className: 'cols-between pill pad-x pad-y-sm bg border shadow solid-on-scroll pe-auto' }, [
 				grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center' }, [
 					B( 'core/site-logo', { width: 40 } ),
