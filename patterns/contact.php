@@ -9,9 +9,9 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"padY":"pad-y-lg","anchor":"form"} -->
-<!-- wp:marccent/grid {"cols":2,"gap":"gap-lg","alignItems":"items-start"} -->
-<!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
+<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","anchor":"form","version":1} -->
+<!-- wp:marccent/grid {"columns":2,"gap":"gap-lg","alignItems":"items-start","version":2} -->
+<!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Get a free quote</h2>
 <!-- /wp:heading -->
@@ -29,7 +29,7 @@
 <!-- /wp:marccent/form -->
 <!-- /wp:marccent/grid -->
 
-<!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
+<!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Hours</h3>
 <!-- /wp:heading -->

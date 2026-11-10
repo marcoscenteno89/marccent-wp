@@ -9,14 +9,14 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"padY":"pad-y-lg","surface":"bg"} -->
+<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","surface":"bg","version":1} -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Why customers choose us</h2>
 <!-- /wp:heading -->
 
-<!-- wp:marccent/grid {"gap":"gap-lg"} -->
+<!-- wp:marccent/grid {"gap":"gap-lg","version":2} -->
 <!-- wp:marccent/card {"hover":""} -->
-<!-- wp:marccent/icon {"icon":"shield-halved","surface":"bg-primary","label":"Licensed and insured icon"} /-->
+<!-- wp:marccent/icon {"name":"shield-halved","surface":"bg-primary","label":"Licensed and insured icon","version":1} /-->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Licensed and insured</h3>
@@ -28,7 +28,7 @@
 <!-- /wp:marccent/card -->
 
 <!-- wp:marccent/card {"hover":""} -->
-<!-- wp:marccent/icon {"icon":"clock","surface":"bg-primary","label":"On time icon"} /-->
+<!-- wp:marccent/icon {"name":"clock","surface":"bg-primary","label":"On time icon","version":1} /-->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">On time</h3>
@@ -40,7 +40,7 @@
 <!-- /wp:marccent/card -->
 
 <!-- wp:marccent/card {"hover":""} -->
-<!-- wp:marccent/icon {"surface":"bg-primary","label":"Rated by neighbors icon"} /-->
+<!-- wp:marccent/icon {"surface":"bg-primary","label":"Rated by neighbors icon","version":1} /-->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Rated by neighbors</h3>

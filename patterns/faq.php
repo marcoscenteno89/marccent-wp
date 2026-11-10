@@ -9,13 +9,13 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"padY":"pad-y-lg","surface":"bg"} -->
+<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","surface":"bg","version":1} -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Questions</h2>
 <!-- /wp:heading -->
 
-<!-- wp:marccent/grid {"cols":2,"gap":"gap-lg","alignItems":"items-start"} -->
-<!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
+<!-- wp:marccent/grid {"columns":2,"gap":"gap-lg","alignItems":"items-start","version":2} -->
+<!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">A question customers ask (1)?</h3>
 <!-- /wp:heading -->
@@ -25,7 +25,7 @@
 <!-- /wp:paragraph -->
 <!-- /wp:marccent/grid -->
 
-<!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
+<!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">A question customers ask (2)?</h3>
 <!-- /wp:heading -->
@@ -35,7 +35,7 @@
 <!-- /wp:paragraph -->
 <!-- /wp:marccent/grid -->
 
-<!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
+<!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">A question customers ask (3)?</h3>
 <!-- /wp:heading -->
@@ -45,7 +45,7 @@
 <!-- /wp:paragraph -->
 <!-- /wp:marccent/grid -->
 
-<!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
+<!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">A question customers ask (4)?</h3>
 <!-- /wp:heading -->

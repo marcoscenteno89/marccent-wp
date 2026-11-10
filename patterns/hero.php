@@ -9,9 +9,9 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"padY":"pad-y-lg","surface":"bg-secondary"} -->
-<!-- wp:marccent/grid {"cols":2,"gap":"gap-lg","alignItems":"items-center"} -->
-<!-- wp:marccent/grid {"cols":1,"gap":"gap-sm","alignItems":"items-start"} -->
+<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","surface":"bg-secondary","version":1} -->
+<!-- wp:marccent/grid {"columns":2,"gap":"gap-lg","alignItems":"items-center","version":2} -->
+<!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">What you do, in the city you serve</h1>
 <!-- /wp:heading -->
@@ -20,7 +20,7 @@
 <p class="fs-lg">One or two sentences a visitor (and an answer engine) can quote: what the business does, for whom, and where.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:marccent/grid {"layout":"row-wrap","gap":"gap-sm"} -->
+<!-- wp:marccent/grid {"layout":"row-wrap","gap":"gap-sm","version":2} -->
 <!-- wp:marccent/button {"label":"Request a quote","href":"#form","icon":"file-signature"} /-->
 
 <!-- wp:marccent/button {"label":"Call (555) 555-0100","href":"tel:+15555550100","icon":"phone","color":"light"} /-->
