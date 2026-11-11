@@ -21,9 +21,9 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:marccent/grid {"layout":"row-wrap","gap":"gap-sm","version":2} -->
-<!-- wp:marccent/button {"label":"Request a quote","href":"#form","icon":"file-signature"} /-->
+<!-- wp:marccent/button {"icon":"file-signature","href":"#form","label":"Request a quote","version":1} /-->
 
-<!-- wp:marccent/button {"label":"Call (555) 555-0100","href":"tel:+15555550100","icon":"phone","color":"light"} /-->
+<!-- wp:marccent/button {"icon":"phone","href":"tel:+15555550100","label":"Call (555) 555-0100","color":"light","version":1} /-->
 <!-- /wp:marccent/grid -->
 <!-- /wp:marccent/grid -->
 
