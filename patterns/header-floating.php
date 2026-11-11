@@ -9,8 +9,8 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","className":"fixed-top pe-none","version":1} -->
-<!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","className":"cols-between pill pad-x pad-y-sm bg border shadow solid-on-scroll pe-auto","version":2} -->
+<!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","version":1,"className":"fixed-top pe-none"} -->
+<!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","version":2,"className":"cols-between pill pad-x pad-y-sm bg border shadow solid-on-scroll pe-auto"} -->
 <!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","version":2} -->
 <!-- wp:site-logo {"width":40} /-->
 
@@ -18,7 +18,7 @@
 <!-- /wp:marccent/grid -->
 
 <!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","version":2} -->
-<!-- wp:marccent/menu {"location":"primary","layout":"auto-cols","fold":true,"className":"menu-quiet","version":2} /-->
+<!-- wp:marccent/menu {"layout":"auto-cols","fold":true,"location":"primary","version":2,"className":"menu-quiet"} /-->
 
 <!-- wp:marccent/mini-theme-editor {"visitors":true,"version":1} /-->
 <!-- /wp:marccent/grid -->

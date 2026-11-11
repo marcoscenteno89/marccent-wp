@@ -15,7 +15,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:marccent/grid {"gap":"gap-lg","version":2} -->
-<!-- wp:marccent/card {"hover":""} -->
+<!-- wp:marccent/card {"rows":0,"version":1} -->
 <!-- wp:marccent/icon {"name":"shield-halved","surface":"bg-primary","label":"Licensed and insured icon","version":1} /-->
 
 <!-- wp:heading {"level":3} -->
@@ -27,7 +27,7 @@
 <!-- /wp:paragraph -->
 <!-- /wp:marccent/card -->
 
-<!-- wp:marccent/card {"hover":""} -->
+<!-- wp:marccent/card {"rows":0,"version":1} -->
 <!-- wp:marccent/icon {"name":"clock","surface":"bg-primary","label":"On time icon","version":1} /-->
 
 <!-- wp:heading {"level":3} -->
@@ -39,7 +39,7 @@
 <!-- /wp:paragraph -->
 <!-- /wp:marccent/card -->
 
-<!-- wp:marccent/card {"hover":""} -->
+<!-- wp:marccent/card {"rows":0,"version":1} -->
 <!-- wp:marccent/icon {"surface":"bg-primary","label":"Rated by neighbors icon","version":1} /-->
 
 <!-- wp:heading {"level":3} -->

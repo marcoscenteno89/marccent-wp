@@ -9,23 +9,23 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","anchor":"form","version":1} -->
+<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","version":1,"anchor":"form"} -->
 <!-- wp:marccent/grid {"columns":2,"gap":"gap-lg","alignItems":"items-start","version":2} -->
 <!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Get a free quote</h2>
 <!-- /wp:heading -->
 
-<!-- wp:marccent/form {"successMessage":"Thanks! We got it and will be in touch within a day."} -->
-<!-- wp:marccent/form-field {"name":"name","label":"Name","required":true} /-->
+<!-- wp:marccent/form {"submitLabel":"Send","successMessage":"Thanks! We got it and will be in touch within a day.","version":1} -->
+<!-- wp:marccent/form-field {"name":"name","label":"Name","required":true,"version":1} /-->
 
-<!-- wp:marccent/form-field {"name":"phone","label":"Phone","type":"tel","required":true} /-->
+<!-- wp:marccent/form-field {"name":"phone","label":"Phone","type":"tel","required":true,"version":1} /-->
 
-<!-- wp:marccent/form-field {"name":"email","label":"Email","type":"email"} /-->
+<!-- wp:marccent/form-field {"name":"email","label":"Email","type":"email","version":1} /-->
 
-<!-- wp:marccent/form-field {"name":"message","label":"What do you need?","type":"textarea"} /-->
+<!-- wp:marccent/form-field {"name":"message","label":"What do you need?","type":"textarea","version":1} /-->
 
-<!-- wp:marccent/form-field {"name":"photo","label":"A photo (optional)","type":"file","accept":"image/*"} /-->
+<!-- wp:marccent/form-field {"name":"photo","label":"A photo (optional)","type":"file","accept":"image/*","version":1} /-->
 <!-- /wp:marccent/form -->
 <!-- /wp:marccent/grid -->
 

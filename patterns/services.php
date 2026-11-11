@@ -21,14 +21,14 @@
 <!-- /wp:marccent/grid -->
 
 <!-- wp:marccent/loop {"postType":"page","perPage":12,"orderBy":"menu_order","order":"asc","parent":"services"} -->
-<!-- wp:marccent/card {"hover":""} -->
+<!-- wp:marccent/card {"rows":0,"version":1} -->
 <!-- wp:marccent/field {"key":"image"} /-->
 
 <!-- wp:marccent/field {"tag":"h3","link":true} /-->
 
 <!-- wp:marccent/field {"key":"excerpt","format":"words:24"} /-->
 
-<!-- wp:marccent/button {"label":"More about {{ title }}","href":"{{ link }}"} /-->
+<!-- wp:marccent/button {"href":"{{ link }}","label":"More about {{ title }}","version":1} /-->
 <!-- /wp:marccent/card -->
 <!-- /wp:marccent/loop -->
 <!-- /wp:marccent/section -->
