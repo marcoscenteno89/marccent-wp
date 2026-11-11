@@ -23,6 +23,37 @@ const field = ( key, attrs = {} ) => B( 'marccent/field', { key, ...attrs } );
 
 // [ slug, title, categories, description, keywords, blocks ]
 const PATTERNS = [
+	// The site's header (marccent-theme PATTERNS.md, Header; parts/header.html): the logo and name at the start; at the end
+	// the Primary menu, folding behind a menu button on phones, and what visitors may change of the theme.
+	[ 'header', 'Header: logo, main menu and theme controls', [ 'header', 'marccent' ], 'The site’s header, sticky at the top: the logo and name, the menu in the Primary location (Appearance → Menus) folding behind a menu button on phones, and what Appearance → Marccent theme, Visitors allows. Add a button for a call to action.', [ 'header', 'menu', 'navigation' ], [
+		section( { as: 'header', verticalPadding: 'pad-y-sm', surface: 'bg', className: 'border-bottom sticky-top' }, [
+			grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center', className: 'cols-between' }, [
+				grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center' }, [
+					B( 'core/site-logo', { width: 40 } ),
+					B( 'core/site-title', { level: 0, className: 'fw-bold' } ),
+				] ),
+				grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center' }, [
+					B( 'marccent/menu', { location: 'primary', layout: 'auto-cols', fold: true, className: 'menu-quiet' } ),
+					B( 'marccent/mini-theme-editor', { visitors: true } ),
+				] ),
+			] ),
+		] ),
+	] ],
+	// The header floating over the hero (PATTERNS.md, Floating header): a pill, see-through until the page scrolls.
+	[ 'header-floating', 'Header: floating over the hero', [ 'header', 'marccent' ], 'The header as a pill floating over the top of the page: see-through while the page is at its top, solid once it scrolls; the first section (a hero) starts under it. The same parts as the Header.', [ 'header', 'menu', 'navigation', 'floating' ], [
+		section( { as: 'header', verticalPadding: 'pad-y-sm', className: 'fixed-top pe-none' }, [
+			grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center', className: 'cols-between pill pad-x pad-y-sm bg border shadow solid-on-scroll pe-auto' }, [
+				grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center' }, [
+					B( 'core/site-logo', { width: 40 } ),
+					B( 'core/site-title', { level: 0, className: 'fw-bold' } ),
+				] ),
+				grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center' }, [
+					B( 'marccent/menu', { location: 'primary', layout: 'auto-cols', fold: true, className: 'menu-quiet' } ),
+					B( 'marccent/mini-theme-editor', { visitors: true } ),
+				] ),
+			] ),
+		] ),
+	] ],
 	[ 'hero', 'Hero: heading, lead and calls to action', [ 'banner', 'marccent' ], 'The top of a page: what the business does and where, and the two things a visitor can do next.', [ 'hero', 'header', 'cta' ], [
 		section( { surface: 'bg-secondary' }, [
 			grid( { cols: 2, gap: 'gap-lg', alignItems: 'items-center' }, [
