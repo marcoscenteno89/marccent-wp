@@ -1,8 +1,9 @@
 <?php
 /**
  * What WordPress adds to every page that a Marccent site doesn't use: emoji scripts, oEmbed discovery, feed links (no
- * blog), the generator and editing-client links, and the classic-theme styles. The page's first image loads first;
- * the others wait until they're near. (From Marccent Local, which kept only what's about the business.)
+ * blog), the generator and editing-client links, and the classic-theme styles. Images are WordPress's own: it marks the
+ * first large one fetchpriority="high" and lazy-loads the rest. (From Marccent Local, which kept only what's about
+ * the business.)
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,24 +27,3 @@ add_action( 'init', function () {
 add_action( 'wp_enqueue_scripts', function () {
 	wp_dequeue_style( 'classic-theme-styles' );
 }, 20 );
-
-// The first image of a page (its hero, above the fold) loads first; the rest wait until they're near.
-add_filter( 'wp_content_img_tag', function ( $img, $context, $attachment_id ) {
-	static $seen = 0;
-	if ( 'the_content' !== $context ) {
-		return $img;
-	}
-	++$seen;
-	if ( 1 === $seen ) {
-		$img = str_replace( ' loading="lazy"', '', $img );
-		if ( ! str_contains( $img, 'fetchpriority' ) ) {
-			$img = str_replace( '<img ', '<img fetchpriority="high" ', $img );
-		}
-	} elseif ( ! str_contains( $img, 'loading=' ) ) {
-		$img = str_replace( '<img ', '<img loading="lazy" ', $img );
-	}
-	if ( ! str_contains( $img, 'decoding=' ) ) {
-		$img = str_replace( '<img ', '<img decoding="async" ', $img );
-	}
-	return $img;
-}, 10, 3 );
