@@ -6,7 +6,7 @@
  * Keywords: gallery, photos, loop
  * Description: The gallery page’s Photos rows (a repeating field group: image, caption), in a grid, with a filter visitors can use. Needs the Photos group on the gallery page.
  *
- * Written by tools/patterns.js; change it there.
+ * Written by tools/patterns.js from marccent-patterns' wp/patterns.cjs; change it there.
  */
 ?>
 <!-- wp:marccent/section {"verticalPadding":"pad-y-lg","version":2} -->

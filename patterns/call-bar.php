@@ -6,7 +6,7 @@
  * Keywords: call, phone, quote, mobile, sticky
  * Description: Two buttons fixed along the bottom of the window on phones only: Call (the business’s number) and Get a quote. Put it at the end of the footer; replace the number and the quote page.
  *
- * Written by tools/patterns.js; change it there.
+ * Written by tools/patterns.js from marccent-patterns' wp/patterns.cjs; change it there.
  */
 ?>
 <!-- wp:spacer {"height":"4.5rem","className":"d-md-none"} -->

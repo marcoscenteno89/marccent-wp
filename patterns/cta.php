@@ -6,7 +6,7 @@
  * Keywords: cta, quote, call
  * Description: A band asking for the next step, in the brand color.
  *
- * Written by tools/patterns.js; change it there.
+ * Written by tools/patterns.js from marccent-patterns' wp/patterns.cjs; change it there.
  */
 ?>
 <!-- wp:marccent/section {"verticalPadding":"pad-y-lg","surface":"bg-primary","version":2} -->

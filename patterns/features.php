@@ -6,7 +6,7 @@
  * Keywords: features, benefits, icons
  * Description: Three reasons to choose the business, each with an icon.
  *
- * Written by tools/patterns.js; change it there.
+ * Written by tools/patterns.js from marccent-patterns' wp/patterns.cjs; change it there.
  */
 ?>
 <!-- wp:marccent/section {"verticalPadding":"pad-y-lg","surface":"bg","version":2} -->

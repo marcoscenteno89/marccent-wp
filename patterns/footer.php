@@ -6,7 +6,7 @@
  * Keywords: footer, menu, links, social, legal
  * Description: The site’s footer: the logo, name and a line about the site beside columns of links (a menu each, Appearance → Menus), then the copyright with the legal links and the social icons. Every part is optional: delete what the site doesn’t have.
  *
- * Written by tools/patterns.js; change it there.
+ * Written by tools/patterns.js from marccent-patterns' wp/patterns.cjs; change it there.
  */
 ?>
 <!-- wp:marccent/section {"as":"footer","verticalPadding":"pad-y-lg","gap":"gap-lg","surface":"bg","version":2,"anchor":"footer","className":"border-top"} -->

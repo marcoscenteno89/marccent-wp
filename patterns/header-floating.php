@@ -6,7 +6,7 @@
  * Keywords: header, menu, navigation, floating
  * Description: The header as a pill floating over the top of the page: see-through while the page is at its top, solid once it scrolls; the first section (a hero) starts under it. The same parts as the Header.
  *
- * Written by tools/patterns.js; change it there.
+ * Written by tools/patterns.js from marccent-patterns' wp/patterns.cjs; change it there.
  */
 ?>
 <!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","version":2,"className":"fixed-top pe-none"} -->

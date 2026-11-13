@@ -6,7 +6,7 @@
  * Keywords: header, menu, navigation
  * Description: The site’s header, sticky at the top: the logo and name, the menu in the Primary location (Appearance → Menus) folding behind a menu button on phones, and what Appearance → Marccent theme, Visitors allows. Add a button for a call to action.
  *
- * Written by tools/patterns.js; change it there.
+ * Written by tools/patterns.js from marccent-patterns' wp/patterns.cjs; change it there.
  */
 ?>
 <!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","surface":"bg","version":2,"className":"border-bottom sticky-top"} -->
