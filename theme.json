@@ -7,6 +7,10 @@
 		"layout": { "contentSize": "var(--wrap-max)", "wideSize": "var(--wrap-lg)" },
 		"color": {
 			"defaultPalette": false,
+			"custom": false,
+			"customGradient": false,
+			"customDuotone": false,
+			"defaultDuotone": false,
 			"defaultGradients": false,
 			"palette": [
 				{ "slug": "primary", "name": "Primary", "color": "var(--primary)" },
@@ -19,9 +23,10 @@
 			],
 			"gradients": [ { "slug": "brand", "name": "Brand", "gradient": "var(--gradient)" } ]
 		},
-		"typography": { "defaultFontSizes": false, "fontSizes": [], "fluid": false },
+		"typography": { "defaultFontSizes": false, "fontSizes": [], "fluid": false, "customFontSize": false, "lineHeight": false, "fontFamilies": [] },
 		"spacing": {
 			"defaultSpacingSizes": false,
+			"customSpacingSize": false,
 			"spacingSizes": [
 				{ "slug": "xs", "name": "Extra small", "size": "var(--space-xs)" },
 				{ "slug": "sm", "name": "Small", "size": "var(--space-sm)" },

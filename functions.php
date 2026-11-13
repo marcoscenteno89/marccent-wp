@@ -1,7 +1,8 @@
 <?php
 /**
- * Marccent WP: the page frame and the theme's options (inc/theme-options.php). The look, the theme engine and the
- * blocks come from the Marccent Blocks plugin.
+ * Marccent WP: the page frame (templates, header and footer) and the site's tracking codes. The look, its settings
+ * (Appearance → Marccent theme), the theme engine and the blocks come from the Marccent Blocks plugin, from
+ * marccent-theme's settings (one source of control: PRODUCT-LINE.md 5.7).
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -11,7 +12,6 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'menus' );
 } );
 
-require __DIR__ . '/inc/theme-options.php';
 require __DIR__ . '/inc/tracking.php'; // tracking codes and cookie consent (Appearance → Marccent theme → Tracking and cookies)
 require __DIR__ . '/inc/performance.php'; // what WordPress adds to every page that a Marccent site doesn't use // the site's theme (design, colors, mode, glass, hover…) edited in the Site Editor
 require __DIR__ . '/inc/retired.php'; // retired blocks still saved in the database: the pattern that replaced each, on the page
@@ -88,3 +88,10 @@ add_action( 'load-site-editor.php', function () {
 		exit;
 	}
 } );
+
+/*
+ * WordPress's Global Styles (the site editor's Styles, saved as the wp_global_styles post) aren't a second place to set
+ * the site's look: one source of control (marccent-theme's PRODUCT-LINE.md 5.7), Appearance → Marccent theme. Whatever
+ * a site saved there is left out, and theme.json offers only the theme's tokens (no custom colors, sizes or spacing).
+ */
+add_filter( 'wp_theme_json_data_user', fn() => new WP_Theme_JSON_Data( array( 'version' => 3 ), 'custom' ) );

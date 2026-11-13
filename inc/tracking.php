@@ -152,7 +152,12 @@ add_action( 'wp_footer', function () {
 	}
 }, 100 );
 
-/* The settings: Appearance → Marccent theme → Tracking and cookies (inc/theme-options.php shows the tab) */
+/* The settings: Appearance → Marccent theme → Tracking and cookies (a tab of Marccent Blocks' page, inc/theme-page.php) */
+
+add_filter( 'marccent_theme_tabs', function ( array $tabs ) {
+	$tabs['tracking'] = array( __( 'Tracking and cookies', 'marccent-wp' ), 'marccent_wp_tracking_page' );
+	return $tabs;
+} );
 
 add_action( 'admin_init', function () {
 	register_setting( 'marccent-tracking', MARCCENT_WP_TRACKING, array( 'type' => 'array', 'sanitize_callback' => 'marccent_wp_tracking_sanitize' ) );
