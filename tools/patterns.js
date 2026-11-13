@@ -146,6 +146,39 @@ const PATTERNS = [
 			] ),
 		] ) ] ),
 	] ],
+	// The site's footer (marccent-theme PATTERNS.md, Footer; parts/footer.html, marccent-theme#103): the brand and a line
+	// about the site beside link columns (a menu each), then the legal row and the social icons. id="footer", so the
+	// theme pauses its animations while it's scrolled away.
+	[ 'footer', 'Footer: brand, link columns, legal row and social icons', [ 'footer', 'marccent' ], 'The site’s footer: the logo, name and a line about the site beside columns of links (a menu each, Appearance → Menus), then the copyright with the legal links and the social icons. Every part is optional: delete what the site doesn’t have.', [ 'footer', 'menu', 'links', 'social', 'legal' ], [
+		section( { as: 'footer', anchor: 'footer', verticalPadding: 'pad-y-lg', surface: 'bg', gap: 'gap-lg', className: 'border-top' }, [
+			grid( { layout: 'cols', columns: 2, gap: 'gap-lg', className: 'layout-1-2' }, [
+				stack( [
+					B( 'core/site-logo', { width: 48 } ),
+					B( 'core/site-title', { level: 0, className: 'fw-bold' } ),
+					B( 'core/site-tagline', { className: 'opacity-75' } ),
+				] ),
+				grid( { layout: 'cols', columns: 2, minimumColumnWidth: '10rem', gap: 'gap-lg' }, [
+					stack( [ h( 2, 'Services', { className: 'h6' } ), B( 'marccent/menu', { menu: 'footer-services', label: 'Services', layout: 'fixed', className: 'cols-1 gap-0' } ) ] ),
+					stack( [ h( 2, 'Company', { className: 'h6' } ), B( 'marccent/menu', { menu: 'footer-company', label: 'Company', layout: 'fixed', className: 'cols-1 gap-0' } ) ] ),
+				] ),
+			] ),
+			grid( { layout: 'auto-cols', gap: 'gap-sm', alignItems: 'items-center', className: 'layout-ends border-top pad-y' }, [
+				p( '<small>© 2026 The business name</small>', 'fs-sm opacity-75' ),
+				B( 'marccent/menu', { menu: 'footer-legal', label: 'Footer legal', layout: 'auto-cols', className: 'fs-sm' } ),
+				B( 'marccent/menu', { menu: 'social', label: 'Social', layout: 'auto-cols', iconOnly: true, className: 'col-last' } ),
+			] ),
+		] ),
+	] ],
+	// On phones, Call and Get a quote along the bottom of the window (PATTERNS.md, Call bar; marccent-theme#137), gone from
+	// 48rem where the header's call to action takes over; a spacer of its height ends the page so it never covers the
+	// footer's last line. It replaces Marccent Local's inc/callbar.php.
+	[ 'call-bar', 'Call bar: Call and Get a quote on phones', [ 'footer', 'marccent' ], 'Two buttons fixed along the bottom of the window on phones only: Call (the business’s number) and Get a quote. Put it at the end of the footer; replace the number and the quote page.', [ 'call', 'phone', 'quote', 'mobile', 'sticky' ], [
+		B( 'core/spacer', { height: '4.5rem', className: 'd-md-none' } ),
+		grid( { layout: 'cols', columns: 2, gap: 'gap-sm', className: 'fixed-bottom d-md-none bg border-top pad-sm' }, [
+			B( 'marccent/button', { label: 'Call', href: 'tel:+15555550100', icon: 'phone', color: 'secondary', className: 'w-100' } ),
+			B( 'marccent/button', { label: 'Get a quote', href: '/contact/', icon: 'file-signature', color: 'primary', className: 'w-100' } ),
+		] ),
+	] ],
 ];
 
 module.exports = Object.fromEntries( PATTERNS.map( ( [ slug, , , , , blocks ] ) => [ slug, blocks ] ) );

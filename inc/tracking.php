@@ -106,7 +106,7 @@ function marccent_wp_consent_front(): bool {
 }
 
 // First thing in <head>, before the tracking codes (priority 1): denied by default, or the visitor's earlier answer
-// (its cookie; mcl_consent is the name Marccent Local gave it).
+// (its cookie; mcl_consent is the name Marccent Local gave it). The banner and the answer are the theme's (below).
 add_action( 'wp_head', function () {
 	if ( ! marccent_wp_consent_front() ) {
 		return;
@@ -127,78 +127,30 @@ gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_per
 	<?php
 }, 0 );
 
-// "Hold the tracking codes": inert until the visitor accepts (the banner's script runs them).
+// "Hold the tracking codes": inert until the visitor accepts (the theme's engine runs them, core/consent.js).
 add_filter( 'marccent_tracking_code', function ( string $code ) {
 	if ( '' === $code || ! marccent_wp_consent_front() || ! marccent_wp_consent()['hold'] ) {
 		return $code;
 	}
-	return '<template data-marccent-consent>' . $code . '</template>';
+	return '<template data-consent-held>' . $code . '</template>';
 } );
 
-// The banner and its script, at the end of the page. Its look is a stopgap until marccent-theme has a consent
-// component (marccent-theme/TICKETS.md T-002).
-add_action( 'wp_footer', function () {
-	if ( ! marccent_wp_consent_front() ) {
-		return;
-	}
-	$c = marccent_wp_consent();
-	?>
-<div id="marccent-consent" class="marccent-consent" role="dialog" aria-live="polite" aria-label="<?php esc_attr_e( 'Cookies', 'marccent-wp' ); ?>" hidden>
-	<p><?php echo esc_html( $c['text'] ); ?><?php if ( $c['policy'] ) : ?> <a href="<?php echo esc_url( $c['policy'] ); ?>"><?php esc_html_e( 'Privacy policy', 'marccent-wp' ); ?></a><?php endif; ?></p>
-	<div class="marccent-consent__actions">
-		<button type="button" class="btn" data-consent="no"><?php echo esc_html( $c['reject'] ); ?></button>
-		<button type="button" class="btn primary" data-consent="yes"><?php echo esc_html( $c['accept'] ); ?></button>
-	</div>
-</div>
-<script>
-(function () {
-	var box = document.getElementById('marccent-consent');
-	var granted = {ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted'};
-	var denied = {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'};
-	// The held codes, run: each script made anew (a script cloned from a template doesn't run).
-	var release = function () {
-		document.querySelectorAll('template[data-marccent-consent]').forEach(function (t) {
-			var fragment = t.content.cloneNode(true);
-			fragment.querySelectorAll('script').forEach(function (old) {
-				var s = document.createElement('script');
-				for (var i = 0; i < old.attributes.length; i++) s.setAttribute(old.attributes[i].name, old.attributes[i].value);
-				s.text = old.text;
-				old.replaceWith(s);
-			});
-			t.replaceWith(fragment);
-		});
-	};
-	var answer = function (yes) {
-		document.cookie = 'marccent_consent=' + (yes ? 'yes' : 'no') + ';path=/;max-age=15552000;SameSite=Lax' + (location.protocol === 'https:' ? ';Secure' : '');
-		gtag('consent', 'update', yes ? granted : denied);
-		dataLayer.push({event: 'marccent_consent', consent: yes ? 'yes' : 'no'});
-		if (yes) release();
-		box.hidden = true;
-	};
-	box.addEventListener('click', function (e) {
-		var b = e.target.closest('[data-consent]');
-		if (b) answer(b.dataset.consent === 'yes');
-	});
-	document.addEventListener('click', function (e) {
-		var a = e.target.closest('a[href$="#cookie-settings"]');
-		if (a) {
-			e.preventDefault();
-			box.hidden = false;
-		}
-	});
-	if (window.marccentConsent === 'yes') release();
-	else if (!window.marccentConsent) box.hidden = false;
-})();
-</script>
-	<?php
-}, 100 );
-
+// The banner is the theme's Consent (marccent-theme#138, T-002), written by Marccent Blocks with the site's words; the
+// theme's engine shows it to a visitor who hasn't answered, keeps the answer (the marccent_consent cookie), tells
+// Google's Consent Mode, runs the held codes and reopens it from any #cookie-settings link. The engine loads on every
+// page with the banner.
 add_action( 'wp_enqueue_scripts', function () {
-	if ( ! marccent_wp_consent()['on'] ) {
-		return;
+	if ( marccent_wp_consent_front() && function_exists( 'marccent_blocks_page' ) ) {
+		$page           = &marccent_blocks_page();
+		$page['engine'] = true;
 	}
-	wp_add_inline_style( 'marccent', '.marccent-consent{position:fixed;inset:auto 1rem 1rem auto;z-index:9999;max-width:24rem;padding:1rem 1.25rem;border-radius:var(--radius,.75rem);background:var(--surface,#fff);color:var(--text,#111);box-shadow:0 10px 30px rgb(0 0 0/.2);font-size:.9rem}.marccent-consent[hidden]{display:none}.marccent-consent p{margin:0 0 .75rem}.marccent-consent__actions{display:flex;gap:.5rem;justify-content:flex-end}@media (max-width:30rem){.marccent-consent{inset:auto .5rem .5rem .5rem;max-width:none}}' );
-}, 20 );
+}, 5 );
+
+add_action( 'wp_footer', function () {
+	if ( marccent_wp_consent_front() && function_exists( 'marccent_blocks_consent' ) ) {
+		echo marccent_blocks_consent( marccent_wp_consent() ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped by marccent_blocks_consent
+	}
+}, 100 );
 
 /* The settings: Appearance → Marccent theme → Tracking and cookies (inc/theme-options.php shows the tab) */
 

@@ -9,7 +9,7 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","surface":"bg","version":1,"className":"border-bottom sticky-top"} -->
+<!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","surface":"bg","version":2,"className":"border-bottom sticky-top"} -->
 <!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","version":2,"className":"cols-between"} -->
 <!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","version":2} -->
 <!-- wp:site-logo {"width":40} /-->

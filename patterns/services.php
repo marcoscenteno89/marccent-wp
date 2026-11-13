@@ -9,7 +9,7 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","version":1} -->
+<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","version":2} -->
 <!-- wp:marccent/grid {"columns":1,"gap":"gap-sm","alignItems":"items-start","version":2} -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Our services</h2>

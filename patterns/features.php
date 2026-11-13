@@ -9,7 +9,7 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","surface":"bg","version":1} -->
+<!-- wp:marccent/section {"verticalPadding":"pad-y-lg","surface":"bg","version":2} -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Why customers choose us</h2>
 <!-- /wp:heading -->

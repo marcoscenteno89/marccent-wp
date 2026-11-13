@@ -9,7 +9,7 @@
  * Written by tools/patterns.js; change it there.
  */
 ?>
-<!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","version":1,"className":"fixed-top pe-none"} -->
+<!-- wp:marccent/section {"as":"header","verticalPadding":"pad-y-sm","version":2,"className":"fixed-top pe-none"} -->
 <!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","version":2,"className":"cols-between pill pad-x pad-y-sm bg border shadow solid-on-scroll pe-auto"} -->
 <!-- wp:marccent/grid {"layout":"auto-cols","gap":"gap-sm","alignItems":"items-center","version":2} -->
 <!-- wp:site-logo {"width":40} /-->
