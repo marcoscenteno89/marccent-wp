@@ -88,10 +88,3 @@ add_action( 'load-site-editor.php', function () {
 		exit;
 	}
 } );
-
-/*
- * WordPress's Global Styles (the site editor's Styles, saved as the wp_global_styles post) aren't a second place to set
- * the site's look: one source of control (marccent-theme's PRODUCT-LINE.md 5.7), Appearance → Marccent theme. Whatever
- * a site saved there is left out, and theme.json offers only the theme's tokens (no custom colors, sizes or spacing).
- */
-add_filter( 'wp_theme_json_data_user', fn() => new WP_Theme_JSON_Data( array( 'version' => 3 ), 'custom' ) );
